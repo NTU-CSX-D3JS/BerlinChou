@@ -14,10 +14,9 @@ d3.csv(url, function(data){
 	var h = 250; //定義高
 
   var l = d3.max(data, function(d){
+	  console.log(d.amount);
     return d.amount;
   });
-  console.log(data.amount);
-  console.log(l);
 	//建立x軸的尺度
 	var xScale = d3.scaleBand().domain(d3.range(data.length)).rangeRound([0, w]).padding(0.05);
 	//建立y軸的尺度
