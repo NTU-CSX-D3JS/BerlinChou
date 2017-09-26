@@ -15,7 +15,7 @@ d3.csv(url, function(data){
 
   var l = d3.max(data, function(d){
 	  console.log(d.amount);
-    return d.amount;
+    return parseInt(d.amount);
   });
 	//建立x軸的尺度
 	var xScale = d3.scaleBand().domain(d3.range(data.length)).rangeRound([0, w]).padding(0.05);
