@@ -13,7 +13,7 @@ d3.csv(url, function(data){
 	var w = 600; //定義寬
 	var h = 250; //定義高
 
-  let l = d3.max(data, function(d){
+  var l = d3.max(data, function(d){
     return d.amount;
   });
   console.log(l)
@@ -31,7 +31,7 @@ d3.csv(url, function(data){
 	.attr("x" , function(d,i){
 		return xScale(i);
 	})
-	.attr("width" , xScale.rangeBand())
+	.attr("width" , xScale.bandwidth())
 	.attr("height" , function(d){
 		return yScale(d.amount);
 	})
